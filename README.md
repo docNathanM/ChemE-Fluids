@@ -14,4 +14,4 @@ I have used colab.research.google.com to develop notebooks that I then upload to
 
 I didn't have to enable a GitHub Pages site for the repository. Rather, for notebooks in the repository ... they can be viewed using [nbviewer.org](https://nbviewer.org) like this ...
 
-https://nbviewer.org/github/docNathanM/ChemE-Fluids/blob/main/ch5p9.ipynb
+https://nbviewer.org/github/docNathanM/ChemE-Fluids/blob/main/ChE316_HW_08_ch5prob9_fullExampleSolution.ipynb
