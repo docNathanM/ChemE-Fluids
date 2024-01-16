@@ -14601,7 +14601,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><!--NAVIGATION-->
-&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/01.02-Units-Template-with-pint.html">1.2 Units Template with <code>pint</code></a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/01.04-Queary-Wolfram-Alpha.html">1.4 Queary Wolfram Alpha for Information</a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/01.03-Properties-of-Pure-Substances-with-CoolProp.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/01.03-Properties-of-Pure-Substances-with-CoolProp.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
+&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/02.02-Units-Template-with-pint.html">2.2 Units Template with <code>pint</code></a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/02.04-Queary-Wolfram-Alpha.html">2.4 Queary Wolfram Alpha for Information</a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/02.03-Properties-of-Pure-Substances-with-CoolProp.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/02.03-Properties-of-Pure-Substances-with-CoolProp.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
 
 </div>
 </div>
@@ -14633,7 +14633,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="1.3-Properties-of-Pure-Substances-with-CoolProp">1.3 Properties of Pure Substances with <code>CoolProp</code><a class="anchor-link" href="#1.3-Properties-of-Pure-Substances-with-CoolProp">&#182;</a></h1>
+<h1 id="2.3-Properties-of-Pure-Substances-with-CoolProp">2.3 Properties of Pure Substances with <code>CoolProp</code><a class="anchor-link" href="#2.3-Properties-of-Pure-Substances-with-CoolProp">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14648,7 +14648,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.3.1-Properties-of-Pure-Substances">1.3.1 Properties of Pure Substances<a class="anchor-link" href="#1.3.1-Properties-of-Pure-Substances">&#182;</a></h2><p>For many chemical applications we need more complex models for fluid properties, but for simple calculations that involve a single fluid we can use molecular models of pure substances.</p>
+<h2 id="2.3.1-Properties-of-Pure-Substances">2.3.1 Properties of Pure Substances<a class="anchor-link" href="#2.3.1-Properties-of-Pure-Substances">&#182;</a></h2><p>For many chemical applications we need more complex models for fluid properties, but for simple calculations that involve a single fluid we can use molecular models of pure substances.</p>
 <h2 id="CoolProp">CoolProp<a class="anchor-link" href="#CoolProp">&#182;</a></h2><p>I use CoolProp because it is a free port of many substances in the NIST RefProp database. 
 <a href="http://www.coolprop.org/index.html">CoolProp: equations of state and transport properties for 122 components</a>.</p>
 <p>There are two possible ways to use this:</p>
@@ -14672,7 +14672,7 @@ An excellent assortment of <a href="http://www.coolprop.org/coolprop/wrappers/Py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.3.1.1-Always-need-Units!">1.3.1.1 Always need Units!<a class="anchor-link" href="#1.3.1.1-Always-need-Units!">&#182;</a></h3><p>I always need to use units, so I will go ahead and get this loaded.</p>
+<h3 id="2.3.1.1-Always-need-Units!">2.3.1.1 Always need Units!<a class="anchor-link" href="#2.3.1.1-Always-need-Units!">&#182;</a></h3><p>I always need to use units, so I will go ahead and get this loaded.</p>
 
 </div>
 </div>
@@ -14714,7 +14714,7 @@ An excellent assortment of <a href="http://www.coolprop.org/coolprop/wrappers/Py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.3.1.2-pyFluids-Example">1.3.1.2 pyFluids Example<a class="anchor-link" href="#1.3.1.2-pyFluids-Example">&#182;</a></h3>
+<h3 id="2.3.1.2-pyFluids-Example">2.3.1.2 pyFluids Example<a class="anchor-link" href="#2.3.1.2-pyFluids-Example">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14805,7 +14805,7 @@ An excellent assortment of <a href="http://www.coolprop.org/coolprop/wrappers/Py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.3.1.3-CoolProp-PropsSI-Example">1.3.1.3 CoolProp PropsSI Example<a class="anchor-link" href="#1.3.1.3-CoolProp-PropsSI-Example">&#182;</a></h3>
+<h3 id="2.3.1.3-CoolProp-PropsSI-Example">2.3.1.3 CoolProp PropsSI Example<a class="anchor-link" href="#2.3.1.3-CoolProp-PropsSI-Example">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -14921,7 +14921,7 @@ An excellent assortment of <a href="http://www.coolprop.org/coolprop/wrappers/Py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.3.2-Example">1.3.2 Example<a class="anchor-link" href="#1.3.2-Example">&#182;</a></h2><p>Water at 60 $^\circ$F is to be pumped to the top of a mountain through a 6-inch Schedule 120 pipe at an average velocity of 12 ft/s. The pipe discharges into atmospheric at 3000 ft above the supply reservoir and the pipe itself is 4,500 feet long. Assume a pump efficiency of 70\% and a cost of energy at $0.04/kw-hr, and determine the hourly cost for pumping the water.</p>
+<h2 id="2.3.2-Example">2.3.2 Example<a class="anchor-link" href="#2.3.2-Example">&#182;</a></h2><p>Water at 60 $^\circ$F is to be pumped to the top of a mountain through a 6-inch Schedule 120 pipe at an average velocity of 12 ft/s. The pipe discharges into atmospheric at 3000 ft above the supply reservoir and the pipe itself is 4,500 feet long. Assume a pump efficiency of 70\% and a cost of energy at $0.04/kw-hr, and determine the hourly cost for pumping the water.</p>
 <p>For this problem we need the properties of water. This example uses <code>CoolProp</code>. I first set up the given parameters and use <code>pint</code> for engineering units.</p>
 
 </div>
@@ -14973,7 +14973,7 @@ An excellent assortment of <a href="http://www.coolprop.org/coolprop/wrappers/Py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.3.2.1-Properties-of-Water">1.3.2.1 Properties of Water<a class="anchor-link" href="#1.3.2.1-Properties-of-Water">&#182;</a></h3><p>I'm going to use the <code>PropsSI</code> interface for <code>CoolProp</code>.</p>
+<h3 id="2.3.2.1-Properties-of-Water">2.3.2.1 Properties of Water<a class="anchor-link" href="#2.3.2.1-Properties-of-Water">&#182;</a></h3><p>I'm going to use the <code>PropsSI</code> interface for <code>CoolProp</code>.</p>
 
 </div>
 </div>
@@ -15038,7 +15038,7 @@ An excellent assortment of <a href="http://www.coolprop.org/coolprop/wrappers/Py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.3.3-Calculations">1.3.3 Calculations<a class="anchor-link" href="#1.3.3-Calculations">&#182;</a></h2><p>I'll go ahead and finish out this example to show all the features of working through a complete problem.</p>
+<h2 id="2.3.3-Calculations">2.3.3 Calculations<a class="anchor-link" href="#2.3.3-Calculations">&#182;</a></h2><p>I'll go ahead and finish out this example to show all the features of working through a complete problem.</p>
 
 </div>
 </div>
@@ -15090,7 +15090,7 @@ An excellent assortment of <a href="http://www.coolprop.org/coolprop/wrappers/Py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.3.3.1-Area-and-Flow-Rates">1.3.3.1 Area and Flow Rates<a class="anchor-link" href="#1.3.3.1-Area-and-Flow-Rates">&#182;</a></h3>
+<h3 id="2.3.3.1-Area-and-Flow-Rates">2.3.3.1 Area and Flow Rates<a class="anchor-link" href="#2.3.3.1-Area-and-Flow-Rates">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15156,7 +15156,7 @@ An excellent assortment of <a href="http://www.coolprop.org/coolprop/wrappers/Py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.3.3.2-Reynolds-Number">1.3.3.2 Reynolds Number<a class="anchor-link" href="#1.3.3.2-Reynolds-Number">&#182;</a></h3>
+<h3 id="2.3.3.2-Reynolds-Number">2.3.3.2 Reynolds Number<a class="anchor-link" href="#2.3.3.2-Reynolds-Number">&#182;</a></h3>
 </div>
 </div>
 </div>
@@ -15304,7 +15304,7 @@ An excellent assortment of <a href="http://www.coolprop.org/coolprop/wrappers/Py
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.3.4-Estimate-Friction-Factor">1.3.4 Estimate Friction Factor<a class="anchor-link" href="#1.3.4-Estimate-Friction-Factor">&#182;</a></h2><p>The <em>friction factor</em>, as it is known, is so ubiquitous that you can find a very nice <a href="https://en.wikipedia.org/wiki/Darcy_friction_factor_formulae#Haaland_equation">Wikipedia</a> page that even lists an entire host of approximate equations to estimate the friction factor.</p>
+<h2 id="2.3.4-Estimate-Friction-Factor">2.3.4 Estimate Friction Factor<a class="anchor-link" href="#2.3.4-Estimate-Friction-Factor">&#182;</a></h2><p>The <em>friction factor</em>, as it is known, is so ubiquitous that you can find a very nice <a href="https://en.wikipedia.org/wiki/Darcy_friction_factor_formulae#Haaland_equation">Wikipedia</a> page that even lists an entire host of approximate equations to estimate the friction factor.</p>
 <p>I'm going to compute this with the Haaland equation rather than reading off the chart.</p>
 $$ \frac{1}{\sqrt{f}} = -1.8 \log \left[\left(\frac{\epsilon/D}{3.7}\right)^{1.11} + \frac{6.9}{\textrm{Re}}\right] $$
 </div>
@@ -15444,7 +15444,7 @@ $$ f = \frac{0.25}{\left[\log\left(\frac{\epsilon/D}{3.7} + \frac{5.74}{\textrm{
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.3.5-Calculate-Pressure-Drop">1.3.5 Calculate Pressure Drop<a class="anchor-link" href="#1.3.5-Calculate-Pressure-Drop">&#182;</a></h2>
+<h2 id="2.3.5-Calculate-Pressure-Drop">2.3.5 Calculate Pressure Drop<a class="anchor-link" href="#2.3.5-Calculate-Pressure-Drop">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -15626,7 +15626,7 @@ $$ \frac{\Delta P}{L} = \frac{f}{D}\left(\frac{1}{2}\rho V_{avg}^2\right) $$
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.3.6-Power-Required">1.3.6 Power Required<a class="anchor-link" href="#1.3.6-Power-Required">&#182;</a></h2><p>This is
+<h2 id="2.3.6-Power-Required">2.3.6 Power Required<a class="anchor-link" href="#2.3.6-Power-Required">&#182;</a></h2><p>This is
 $$ Power = \Delta P \dot{Q} = \frac{\Delta P}{\rho}\dot{m}$$</p>
 
 </div>
@@ -15687,7 +15687,7 @@ $$ Power = \Delta P \dot{Q} = \frac{\Delta P}{\rho}\dot{m}$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.3.7-Cost">1.3.7 Cost<a class="anchor-link" href="#1.3.7-Cost">&#182;</a></h2><p>Take the efficiency into account.</p>
+<h2 id="2.3.7-Cost">2.3.7 Cost<a class="anchor-link" href="#2.3.7-Cost">&#182;</a></h2><p>Take the efficiency into account.</p>
 
 </div>
 </div>
@@ -15747,7 +15747,7 @@ $$ Power = \Delta P \dot{Q} = \frac{\Delta P}{\rho}\dot{m}$$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.3.8-Final-Answer">1.3.8 Final Answer<a class="anchor-link" href="#1.3.8-Final-Answer">&#182;</a></h2><p>The cost to pump is <strong><code>$32.15 per hour</code></strong>.</p>
+<h2 id="2.3.8-Final-Answer">2.3.8 Final Answer<a class="anchor-link" href="#2.3.8-Final-Answer">&#182;</a></h2><p>The cost to pump is <strong><code>$32.15 per hour</code></strong>.</p>
 
 </div>
 </div>
@@ -15764,7 +15764,7 @@ $$ Power = \Delta P \dot{Q} = \frac{\Delta P}{\rho}\dot{m}$$</p>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><!--NAVIGATION-->
-&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/01.02-Units-Template-with-pint.html">1.2 Units Template with <code>pint</code></a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/01.04-Queary-Wolfram-Alpha.html">1.4 Queary Wolfram Alpha for Information</a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/01.03-Properties-of-Pure-Substances-with-CoolProp.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/01.03-Properties-of-Pure-Substances-with-CoolProp.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
+&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/02.02-Units-Template-with-pint.html">2.2 Units Template with <code>pint</code></a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/02.04-Queary-Wolfram-Alpha.html">2.4 Queary Wolfram Alpha for Information</a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/02.03-Properties-of-Pure-Substances-with-CoolProp.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/02.03-Properties-of-Pure-Substances-with-CoolProp.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
 
 </div>
 </div>

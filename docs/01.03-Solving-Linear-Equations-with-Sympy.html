@@ -14601,7 +14601,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><!--NAVIGATION-->
-&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/01.01-Units-and-Engineering-Calculations.html">1.1 Units and Engineering Calculations</a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/01.03-Properties-of-Pure-Substances-with-CoolProp.html">1.3 Properties of Pure Substances with <code>CoolProp</code></a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/01.02-Units-Template-with-pint.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/01.02-Units-Template-with-pint.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
+&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/01.02-Getting-Started-with-Jupyter-Notebooks-and-Python.html">1.2 Jupyter Notebooks, Python, and Google Colaboratory</a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/02.00-Units-Quantities-and-Engineering-Calculations.html">2.0 Units, Quantities, and Engineering Calculations</a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/01.03-Solving-Linear-Equations-with-Sympy.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/01.03-Solving-Linear-Equations-with-Sympy.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
 
 </div>
 </div>
@@ -14617,7 +14617,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="1.2-Units-Template-with-pint">1.2 Units Template with <code>pint</code><a class="anchor-link" href="#1.2-Units-Template-with-pint">&#182;</a></h1>
+<h1 id="1.3-Solving-Linear-Equations-with-Simpy">1.3 Solving Linear Equations with Simpy<a class="anchor-link" href="#1.3-Solving-Linear-Equations-with-Simpy">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -14632,8 +14632,23 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.2.1-Setup-and-Usage-Examples">1.2.1 Setup and Usage Examples<a class="anchor-link" href="#1.2.1-Setup-and-Usage-Examples">&#182;</a></h2><p>This is a condensed excerpt from the previous notebook that can be used as a starting point for implementing <code>pint</code> in any project or assignment.</p>
+<h2 id="1.3.1-Summary">1.3.1 Summary<a class="anchor-link" href="#1.3.1-Summary">&#182;</a></h2><p>This notebook shows how to solve linear equations corresponding to material balances on chemical processes using the {ython symbolic algebra library <a href="http://sympy.org/en/index.html">Sympy</a>. The example is adapted with permission from <a href="http://learncheme.ning.com/">learnCheme.com</a>, a project at the University of Colorado funded by the National Science Foundation and the Shell Corporation.</p>
 
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="1.3.2-Problem-Statement">1.3.2 Problem Statement<a class="anchor-link" href="#1.3.2-Problem-Statement">&#182;</a></h2>
 </div>
 </div>
 </div>
@@ -14646,10 +14661,11 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install pint
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;KrrZB5LvXF4&quot;</span><span class="p">,</span><span class="mi">560</span><span class="p">,</span><span class="mi">315</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="mi">144</span><span class="p">,</span><span class="n">rel</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14667,13 +14683,22 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[1]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Requirement already satisfied: pint in /Users/jeff/anaconda/lib/python3.5/site-packages
-</pre>
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/KrrZB5LvXF4?start=0&end=144&rel=0"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
 </div>
+
 </div>
 
 </div>
@@ -14691,7 +14716,24 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The core concept in pint is to work with a <code>unit registry</code>, which is created as follows</p>
+<p>Before going further, be sure you can solve a system of two (or three) linear equations in two (or three) unknowns with paper and pencil. Most of you will have seen these problems before in your math classes.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+    
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2 id="1.3.3-Solving-linear-equations-using-Sympy">1.3.3 Solving linear equations using Sympy<a class="anchor-link" href="#1.3.3-Solving-linear-equations-using-Sympy">&#182;</a></h2><p>Assuming you have mastered the solution of linear equations with paper and pencil, let's see how to find solutions using the python symbolic algebra library <a href="http://sympy.org/en/index.html">Sympy</a>.</p>
+<p>Sympy is an example of a Python 'library'. The first step in using the library is to import it into the current workspace. It is customary to import into the workspace with the namespace <code>sym</code> to avoid name clashes with variables and functions.</p>
 
 </div>
 </div>
@@ -14708,8 +14750,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pint</span> <span class="kn">import</span> <span class="n">UnitRegistry</span>
-<span class="n">ur</span> <span class="o">=</span> <span class="n">UnitRegistry</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 </pre></div>
 
      </div>
@@ -14728,7 +14769,11 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.2.1.1-Assigning-Multiplicative-Units">1.2.1.1 Assigning Multiplicative Units<a class="anchor-link" href="#1.2.1.1-Assigning-Multiplicative-Units">&#182;</a></h3><p>The unit registry provides a simple means to assign units using the multiplication operator. For example, here's how to compute the molarity of a sodium chloride solution in 58.44 grams of $NaCl$ (mw = 58.44) has been dissolved in water to form 3 liters of solution.</p>
+<p>The system of equations to be solved is given by</p>
+\begin{align*}
+n_1 + n_1 &amp; = 100 \\
+0.7 n_1 + 0.2 n_2 &amp; = 30
+\end{align*}<p>The next step is to introduces names for the unknown variables appearing in our problem. The Sympy function <code>sym.var()</code> constructs symbolic variables given a list of variable names.</p>
 
 </div>
 </div>
@@ -14742,18 +14787,75 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># problem data</span>
-<span class="n">V</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">liters</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">58.44</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span>
-<span class="n">mw</span> <span class="o">=</span> <span class="mf">58.44</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">sym</span><span class="o">.</span><span class="n">var</span><span class="p">([</span><span class="s1">&#39;n1&#39;</span><span class="p">,</span><span class="s1">&#39;n2&#39;</span><span class="p">])</span>
+</pre></div>
 
-<span class="c1"># compute molarity</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">m</span><span class="o">/</span><span class="p">(</span><span class="n">mw</span><span class="o">*</span><span class="n">V</span><span class="p">)</span>
+     </div>
+</div>
+</div>
+</div>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[3]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[n1, n2]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+    
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>The newly constructed symbolic variable are used to create symbolic equations. The sympy function <code>sym.Eq()</code> accepts two arguments, each a symbolic expression expressing the left and right hand sides of an equation. For this problem there are two equations to be solved simultaneously, so we construct both and store them in a python list.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">eqns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="mf">0.7</span><span class="o">*</span><span class="n">n1</span> <span class="o">+</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">n2</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">eqns</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14775,133 +14877,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.3333333333333333 mole / liter
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.2.1.2-Unit-Conversion">1.2.1.2 Unit Conversion<a class="anchor-link" href="#1.2.1.2-Unit-Conversion">&#182;</a></h3><p>Each variable with units has <code>to()</code> and <code>ito()</code> methods for converting the quantity to a desired set of units. The <code>to()</code> method is used to create a new variable by converting an existing variable to the indicated units.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">kilograms</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">gallon</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.5 kilogram / gallon
-132.08602617907425 gram / liter
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <code>ito()</code> method converts an existing variable 'in-place'.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">kilograms</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">gallon</span>
-<span class="n">x</span><span class="o">.</span><span class="n">ito</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>132.08602617907425 gram / liter
+<pre>[Eq(n1 + n2, 100), Eq(0.7*n1 + 0.2*n2, 30)]
 </pre>
 </div>
 </div>
@@ -14921,7 +14897,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For example, here's how to compute the molarity of a sodium chloride solution in which 0.5 pounds of NaCl (mw = 58.44) has been dissolved in water to form 2 gallons of solution.</p>
+<p>The last step is solve the equations using <code>sym.solve()</code>.</p>
 
 </div>
 </div>
@@ -14935,25 +14911,11 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># problem data</span>
-<span class="n">V</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">gallons</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">lbs</span>
-<span class="n">mw</span> <span class="o">=</span> <span class="mf">58.44</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
-
-<span class="c1"># compute concentration</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">m</span><span class="o">/</span><span class="p">(</span><span class="n">mw</span><span class="o">*</span><span class="n">V</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-
-<span class="c1"># convert to desired units and print</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-
-<span class="c1"># convert to moles per gallon</span>
-<span class="n">C</span><span class="o">.</span><span class="n">ito</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">gallon</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">soln</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eqns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soln</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14975,9 +14937,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.0028519279032626055 mole * pound / gallon / gram
-0.3417363316133261 mole / liter
-1.2936127367100163 mole / gallon
+<pre>{n1: 20.0000000000000, n2: 80.0000000000000}
 </pre>
 </div>
 </div>
@@ -14997,7 +14957,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Muratic Acid is concentrated hydrochloric acid (31.5% by weight) sold by the gallon in home improvement centers for cleaning brick and masonary surfaces. The density of the solution is typically about 1.15 grams/ml. What is the molar concentration of HCl?</p>
+<p>Putting these steps together, we have a three-step procedure for solving systems of linear equations using Sympy.</p>
 
 </div>
 </div>
@@ -15011,25 +14971,24 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># molecular weight</span>
-<span class="n">mwHCl</span> <span class="o">=</span> <span class="mf">36.46</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import sympy</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sym</span>
 
-<span class="c1"># problem data</span>
-<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">ml</span>
-<span class="n">wHCl</span> <span class="o">=</span> <span class="mf">0.315</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">gram</span>
+<span class="c1"># Step 1. Create symbolic variables.</span>
+<span class="n">sym</span><span class="o">.</span><span class="n">var</span><span class="p">([</span><span class="s1">&#39;n1&#39;</span><span class="p">,</span><span class="s1">&#39;n2&#39;</span><span class="p">])</span>
 
-<span class="c1"># calculations</span>
-<span class="n">massHCl</span> <span class="o">=</span> <span class="n">wHCl</span> <span class="o">*</span> <span class="n">rho</span>             <span class="c1"># mass of HCl per volume</span>
-<span class="n">moleHCl</span> <span class="o">=</span> <span class="n">massHCl</span><span class="o">/</span><span class="n">mwHCl</span>          <span class="c1"># gmols of HCl per volume</span>
+<span class="c1"># Step 2. Create a list of equations using the symbolic variables</span>
+<span class="n">eqns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="n">n1</span> <span class="o">+</span> <span class="n">n2</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="n">sym</span><span class="o">.</span><span class="n">Eq</span><span class="p">(</span><span class="mf">0.7</span><span class="o">*</span><span class="n">n1</span> <span class="o">+</span> <span class="mf">0.2</span><span class="o">*</span><span class="n">n2</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="p">]</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">moleHCl</span><span class="p">)</span>
-
-<span class="c1"># convert to desired units</span>
-<span class="n">moleHCl</span><span class="o">.</span><span class="n">ito</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">moleHCl</span><span class="p">)</span>
+<span class="c1"># Step 3. Solve and display solution</span>
+<span class="n">soln</span> <span class="o">=</span> <span class="n">sym</span><span class="o">.</span><span class="n">solve</span><span class="p">(</span><span class="n">eqns</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">soln</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15051,8 +15010,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.009935545803620405 mole / milliliter
-9.935545803620405 mole / liter
+<pre>{n1: 20.0000000000000, n2: 80.0000000000000}
 </pre>
 </div>
 </div>
@@ -15072,7 +15030,8 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.2.1.3-Mole-and-Mass-Fractions">1.2.1.3 Mole and Mass Fractions<a class="anchor-link" href="#1.2.1.3-Mole-and-Mass-Fractions">&#182;</a></h3>
+<h2 id="1.3.4-Exercise">1.3.4 Exercise<a class="anchor-link" href="#1.3.4-Exercise">&#182;</a></h2><p>In the cell below, prepare an IPython solution to the second problem described in the screencast involving three linear equations. The problem description starts at the 2:22 mark in the screencast. You can use the example above as a template for your solution.</p>
+
 </div>
 </div>
 </div>
@@ -15085,19 +15044,11 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># molar weights </span>
-<span class="n">mwBen</span> <span class="o">=</span> <span class="mf">78.11</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span>
-<span class="n">mwTol</span> <span class="o">=</span> <span class="mf">92.14</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span>
-
-<span class="n">xBen</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
-<span class="n">xTol</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
-
-<span class="n">wBen</span> <span class="o">=</span> <span class="n">mwBen</span><span class="o">*</span><span class="n">xBen</span> <span class="o">/</span> <span class="p">(</span><span class="n">mwBen</span><span class="o">*</span><span class="n">xBen</span> <span class="o">+</span> <span class="n">mwTol</span><span class="o">*</span><span class="n">xTol</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">wBen</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">YouTubeVideo</span>
+<span class="n">YouTubeVideo</span><span class="p">(</span><span class="s2">&quot;KrrZB5LvXF4&quot;</span><span class="p">,</span><span class="mi">560</span><span class="p">,</span><span class="mi">315</span><span class="p">,</span><span class="n">start</span><span class="o">=</span><span class="mi">144</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="mi">166</span><span class="p">,</span><span class="n">rel</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -15115,296 +15066,20 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.36108542899408286 dimensionless
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.2.1.4-Prefixes">1.2.1.4 Prefixes<a class="anchor-link" href="#1.2.1.4-Prefixes">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mwBen</span> <span class="o">=</span> <span class="mf">78.11</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">kg</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">kmol</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mwBen</span><span class="p">)</span>
-
-<span class="n">mwBen</span><span class="o">.</span><span class="n">ito_base_units</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mwBen</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>78.11 kilogram / kilomole
-0.07811 kilogram / mole
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.2.1.5-Temperature-and-Other-Offset-(Non-multiplicative)-Units">1.2.1.5 Temperature and Other Offset (Non-multiplicative) Units<a class="anchor-link" href="#1.2.1.5-Temperature-and-Other-Offset-(Non-multiplicative)-Units">&#182;</a></h3><p>Examples of non-multiplicative units are degrees Celsius, degrees Fahrenheit, and gauge pressure. For these units the zero of the measurement scale is offset from absolute zero of the underlying physical quantity. In these cases the units are assigned using the <code>Quantity()</code> function of the <code>UnitRegistry</code> module.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="n">ur</span><span class="o">.</span><span class="n">degC</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="s2">&quot; = &quot;</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>25 degC  =  77.00000039999996 degF
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There is an embedded ambiguity in working with non-multiplicative units. For example, given temperatures Ta = 10 and Tdelta = 25 in degrees C, should Ta + Tdelta give an answer of 35 degrees C, or the sum of the absolute temperatures which would correspond to 308.15 degrees C?</p>
-<p>Pint uses unit type called <code>delta_degC</code> for this situation.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Ta</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degC</span><span class="p">)</span>
-<span class="n">Tdelta</span> <span class="o">=</span> <span class="mf">25.0</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">delta_degC</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">Ta</span> <span class="o">+</span> <span class="n">Tdelta</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>35.0 degC
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tb</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degC</span><span class="p">)</span>
-<span class="n">Tf</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mf">32.0</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:6.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tb</span><span class="o">-</span><span class="n">Tf</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:6.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">Tb</span><span class="o">-</span><span class="n">Tf</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">delta_degF</span><span class="p">)))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>100.000 delta_degC
-180.000 delta_degF
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">P1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.5</span> <span class="o">+</span> <span class="mf">14.696</span><span class="p">)</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">psi</span>
-
-<span class="n">T1</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degR</span><span class="p">)</span>
-<span class="n">T2</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degR</span><span class="p">)</span>
-
-<span class="n">P2</span> <span class="o">=</span> <span class="p">(</span><span class="n">T2</span><span class="o">/</span><span class="n">T1</span><span class="p">)</span><span class="o">*</span><span class="n">P1</span> <span class="o">-</span> <span class="mf">14.696</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">psi</span>
-<span class="n">P2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[7]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-10.959644683262889 pound_force_per_square_inch
+
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/KrrZB5LvXF4?start=144&end=166&rel=0"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        
 </div>
 
 </div>
@@ -15417,7 +15092,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 
 
 
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+    <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -15425,54 +15100,12 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="n">pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-
-<span class="c1"># constants</span>
-<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">joule</span><span class="o">/</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">*</span><span class="n">ur</span><span class="o">.</span><span class="n">degK</span><span class="p">)</span>
-<span class="n">mw</span> <span class="o">=</span> <span class="mf">28.966</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
-
-<span class="c1"># problem data</span>
-<span class="n">P</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">atm</span>
-<span class="n">T</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="n">ur</span><span class="o">.</span><span class="n">degC</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degK</span><span class="p">)</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">cm</span>
-
-<span class="c1"># calculations</span>
-<span class="n">V</span> <span class="o">=</span> <span class="p">(</span><span class="mf">4.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volume = &quot;</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
-
-<span class="n">m</span> <span class="o">=</span> <span class="n">mw</span><span class="o">*</span><span class="n">P</span><span class="o">*</span><span class="n">V</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mass of Air = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Volume =  4188.790204786391 centimeter ** 3
-Mass of Air =  4.95962584191983 gram
-</pre>
-</div>
-</div>
-
-</div>
-
 </div>
 
 </div>
@@ -15487,7 +15120,7 @@ Mass of Air =  4.95962584191983 gram
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><!--NAVIGATION-->
-&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/01.01-Units-and-Engineering-Calculations.html">1.1 Units and Engineering Calculations</a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/01.03-Properties-of-Pure-Substances-with-CoolProp.html">1.3 Properties of Pure Substances with <code>CoolProp</code></a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/01.02-Units-Template-with-pint.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/01.02-Units-Template-with-pint.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
+&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/01.02-Getting-Started-with-Jupyter-Notebooks-and-Python.html">1.2 Jupyter Notebooks, Python, and Google Colaboratory</a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/02.00-Units-Quantities-and-Engineering-Calculations.html">2.0 Units, Quantities, and Engineering Calculations</a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/01.03-Solving-Linear-Equations-with-Sympy.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/01.03-Solving-Linear-Equations-with-Sympy.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
 
 </div>
 </div>

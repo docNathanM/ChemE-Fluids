@@ -14601,7 +14601,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><!--NAVIGATION-->
-&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/01.00-Units-Quantities-and-Engineering-Calculations.html">1.0 Units, Quantities, and Engineering Calculations</a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/01.02-Units-Template-with-pint.html">1.2 Units Template with <code>pint</code></a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/01.01-Units-and-Engineering-Calculations.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/01.01-Units-and-Engineering-Calculations.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
+&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/02.03-Properties-of-Pure-Substances-with-CoolProp.html">2.3 Properties of Pure Substances with <code>CoolProp</code></a> | <a href="toc.html">Contents</a> |<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/02.04-Queary-Wolfram-Alpha.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/02.04-Queary-Wolfram-Alpha.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
 
 </div>
 </div>
@@ -14617,636 +14617,8 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h1 id="1.1-Units-and-Engineering-Calculations">1.1 Units and Engineering Calculations<a class="anchor-link" href="#1.1-Units-and-Engineering-Calculations">&#182;</a></h1>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.1.1-Summary">1.1.1 Summary<a class="anchor-link" href="#1.1.1-Summary">&#182;</a></h2><p>The purpose of this <a href="http://jupyter.org/notebook.html">Jupyter notebook</a> is to get you started with units and engineering calculations.</p>
-<p>Things to master:</p>
-<ul>
-<li>Unit systems</li>
-<li>Unit conversions</li>
-<li>Difference between mass and weight, and the difference between kg-m, kg-f, and lbm and lbf</li>
-<li>Concept of mole, and the difference between g-mol, kg-mol, and any other kind of mole</li>
-<li>Absolute versus Gauge Pressure</li>
-<li>Typical values of temperature and pressure in real-world applications</li>
-<li>Working with units in python using the <code>pint</code> library.</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.1.2-Units-of-Engineering">1.1.2 Units of Engineering<a class="anchor-link" href="#1.1.2-Units-of-Engineering">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.2.1-The-Fundamental-Units-of-Measurement">1.1.2.1 The Fundamental Units of Measurement<a class="anchor-link" href="#1.1.2.1-The-Fundamental-Units-of-Measurement">&#182;</a></h3><p>There are seven fundamental units in the Système International d'Unités (SI) system, all other unit can be generated from these.</p>
-<table>
-<thead><tr>
-<th style="text-align:left">Dimension</th>
-<th style="text-align:left">SI Units</th>
-<th style="text-align:left">CGS</th>
-<th style="text-align:left">English</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Mass</td>
-<td style="text-align:left">kilogram (kg)</td>
-<td style="text-align:left">gram (g)</td>
-<td style="text-align:left">lb-mass, slug</td>
-</tr>
-<tr>
-<td style="text-align:left">Length</td>
-<td style="text-align:left">meter (m)</td>
-<td style="text-align:left">centimeter (cm)</td>
-<td style="text-align:left">inch (in); foot (ft)</td>
-</tr>
-<tr>
-<td style="text-align:left">Time</td>
-<td style="text-align:left">second (s)</td>
-<td style="text-align:left">second (s)</td>
-<td style="text-align:left">second (sec)</td>
-</tr>
-<tr>
-<td style="text-align:left">Temperature</td>
-<td style="text-align:left">degree Kelvin (K)</td>
-<td style="text-align:left">degree Celsius (°C)</td>
-<td style="text-align:left">degree Rankine (°R)</td>
-</tr>
-<tr>
-<td style="text-align:left">Quantity</td>
-<td style="text-align:left">mole (gmol)</td>
-<td style="text-align:left">mole (gmol)</td>
-<td style="text-align:left">mole (gmol)</td>
-</tr>
-<tr>
-<td style="text-align:left">Current</td>
-<td style="text-align:left">Ampere (A)</td>
-<td style="text-align:left">abampere</td>
-<td style="text-align:left"></td>
-</tr>
-<tr>
-<td style="text-align:left">Luminous Intensity</td>
-<td style="text-align:left">candela (cd)</td>
-<td style="text-align:left">stlib [luminance]</td>
-<td style="text-align:left">candlepower, etc.</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p><strong>Exercise.</strong> Give an everyday example of something with about 1 SI unit of the corresonding dimension.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.2.2-Coherent-Derived-Units">1.1.2.2 Coherent Derived Units<a class="anchor-link" href="#1.1.2.2-Coherent-Derived-Units">&#182;</a></h3><p>The SI system describes 22 'derived units' that are expressed in terms of the fundamental units. The following diagram from <a href="http://physics.nist.gov/cuu/Units/SIdiagram.html">NIST illustrates the relationship among the SI units</a>.</p>
-<p><img src="http://physics.nist.gov/cuu/Units/i/SubwayDiagram.gif" alt=""></p>
-<p>Calculations with coherent units is straightforward since they involve just ratios or products of base units. The calculations break down into three steps:</p>
-<ol>
-<li>Recast all of the problem quantities in base or coherent derived units.</li>
-<li>Perform the numerical calculations.</li>
-<li>Using algebraic rules for the cancelation of terms, simplify and reduce units to units relevant to the context of the problem.</li>
-</ol>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p><strong>Example:</strong> The kinetic energy of a object with mass $m = 3\ \mbox{kg}$ traveling at velocity $v = 10 \ \mbox{m/s}$ is given by</p>
-\begin{align*}
-K.E. &amp; = \frac{1}{2} mv^2 \\
-&amp; = \frac{1}{2} \left(3\ \mbox{kg}\right)\left( 10  \frac{\mbox{m}}{\mbox{s}}\right)^2 \\
-&amp; = 150 \ \frac{\mbox{kg}\cdot\mbox{m}^2}{\mbox{s}^2}
-= 150 \ \mbox{N}\cdot\mbox{m}
-= \fbox{150 J}
-\end{align*}
-</blockquote>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p><strong>Example:</strong> What is the mass of air in a spherical balloon with radius of 10 cm inflated to 1 atm at 25 degrees Celsius? Assume the molecular weight of air is 28.966 grams/mole, and that atmospheric pressure is 101,325 Pa.</p>
-<p><em>Solution:</em> Start by converting all of the quantities in the problem to base or derived units.</p>
-$$MW_{air} = 28.966\ \frac{\mbox{g}}{\mbox{mol}} = 0.028966\ \frac{\mbox{kg}}{\mbox{mol}}$$$$ P = 101,325\ \mbox{Pa} = 101,325\ \frac{\mbox{N}}{\mbox{m}^2} = 101,325\ \frac{\mbox{kg}}{\mbox{m}\cdot\mbox{s}^2}$$$$V = \frac{4}{3}\pi r^3 = \frac{4}{3}\pi \left( 0.10\ \mbox{m}\right)^3 = 0.004189\ \mbox{m}^3$$$$R = 8.314 \frac{\mbox{J}}{\mbox{K}\cdot\mbox{mol}} = 8.314 \frac{\mbox{kg}\cdot\mbox{m}^2}{\mbox{s}^2\cdot\mbox{K}\cdot\mbox{mol}}$$$$T = 25 + 273.15 = 298.15 K$$<p></p>
-<p>Using molecular weight and the ideal gas law</p>
-$$ m_{air} = MW_{air} n_{air} = MW_{air}\frac{PV}{RT} $$<p>Substituting quantities into this expression for $m_{air}$</p>
-\begin{align*}
- m_{air} &amp; = \left(0.028966\ \frac{\mbox{kg}}{\mbox{mol}}\right) 
- \frac{\left(101,325\ \frac{\mbox{kg}}{\mbox{m}\cdot\mbox{s}^2}\right)\left(0.004189\ \mbox{m}^3\right)}{\left(8.314 \frac{\mbox{kg}\cdot\mbox{m}^2}{\mbox{s}^2\cdot\mbox{K}\cdot\mbox{mol}}\right)\left(298.15\ \mbox{K}\right)} \\
- &amp; = \frac{0.028966 \cdot 101,325 \cdot 0.004189}{8.314 \cdot 298.15} \times \frac{\frac{\mbox{kg}}{\mbox{mol}}\cdot\frac{\mbox{kg}}{\mbox{m}\cdot\mbox{s}^2}\cdot\mbox{m}^3}{\frac{\mbox{kg}\cdot\mbox{m}^2}{\mbox{s}^2\cdot\mbox{K}\cdot\mbox{mol}} \cdot \mbox{K}}\\
- &amp; = \fbox{0.00496 kg}
- \end{align*}
-</blockquote>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.2.3-Non-Coherent--Derived-Units">1.1.2.3 Non-Coherent  Derived Units<a class="anchor-link" href="#1.1.2.3-Non-Coherent--Derived-Units">&#182;</a></h3><p>Coherent units are easy to work with because no numerical factors are required to express them in terms of the base units. On the other hand, working with such a limited set of units makes it difficult to express commonly quantities in easy-to-remember numbers or do back-of-the-envelop calculations. Having to write a multiple of 101,325 Pa to express commonly encountered pressures is just asking for computational errors.</p>
-<p>Non-coherent derived units are quantities that can be expressed in terms of a numerical factor and product or ratio of base units. Here are some common examples:</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.1.3-Absolute-versus-Offset-Scales">1.1.3 Absolute versus Offset Scales<a class="anchor-link" href="#1.1.3-Absolute-versus-Offset-Scales">&#182;</a></h2><p>For the purpose of applying the ideal gas law, what is the air pressure in this tire?</p>
-<p><img src="https://raw.githubusercontent.com/jckantor/CBE20255/master/notebooks/figures/Tire_pressure_gauge.jpg" alt="Tire_pressure_gauge.jpg"></p>
-<p>The quantities used in most scientific calculations are measured on absolute scales, such as mass and length. On a absolute scale, a value of zero implies the absence of the underlying quantity. Something with zero mass has no mass, something with zero length means it has no length.</p>
-<p>Some common engineering measurements, however, are reported 'relative to' or 'offset from' a reference value.  For example, degrees Celsius measures temperature relative to the melting point of ice; degrees Fahrenheit measures temperature relative to a brisk winter day. In the figure above, tire pressure is being measured relative to pressure of the surrounding air.  This is called the 'gauge pressure' because that is what is being measured by the pressure gauge.</p>
-<p>The offsets result in numerical values convenient for common everyday use, but introduce an additional consideration (and source of errors!) for engineering calculations.</p>
-<p>Examples of offset scales include:</p>
-<ul>
-<li>Degrees Celsius</li>
-<li>Degrees Fahrenheit</li>
-<li>Gauge Pressure (pressure relative to normal atmospheric pressure). </li>
-<li>Enthalpy and Free Energy of Formation (energy required to form a substance relative to standard laboratory conditions.)</li>
-<li>Calendar dates (days relative to start of the Common Era)</li>
-</ul>
-<p>Engineers sometimes distinguish absolute and gauge pressures by adding an explicit suffix. In particular, psia refers to 'pounds per square inch absolute', while psig refers to 'pounds per square inch gauge'. Non-engineers almost never make these distinction, so you need to be very careful when interpreting information given to you! It's always your responsibility to resolve any ambiguity in the data given to you for analysis.</p>
-<p>The misuse of pressure and temperature scales is a common source of errors in engineering calculations.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p><strong>Example:</strong> A football is inflated to 12.5 psig (pounds per square in gauge) at
-70 degrees F. The football is taken to play outdoors at 40 degrees F. Using the 
-gas law,</p>
-$$P_2/T_2 = P_1/T_1$$<p>what is the pressure of the football at playing conditions?</p>
-<p><em>Solution:</em> The ideal gas law assumes quantities are given in absolute units. 
-The problem statement, however, gives conditions in offset units. In this case,
-0 degrees Farhenheit is 459.67 in absolute (Rankine) units, and 0 psig is 
-14.696 psia in absolute units. Incorporating the offsets the gas law reads</p>
-$$\frac{P_2 + 14.696}{40 + 459.67} = \frac{12.5 +  14.696}{70 + 459.67}$$<p>Solving for $P_2$</p>
-$$P_2 = \frac{40+459.67}{70+459.67}(12.5 + 14.696) - 14.696 = 10.96\ \mbox{psig}$$
-</blockquote>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.1.4-Extensive-versus-Intensive-Quantities">1.1.4 Extensive versus Intensive Quantities<a class="anchor-link" href="#1.1.4-Extensive-versus-Intensive-Quantities">&#182;</a></h2><p>An important distinction among measured quantities arises when we consider what happens when combining systems under consideration. For example, mixing two identical one-liter containers of an acidic solution yields two liters of the solution, twice the mass of solution, and twice the number of molecules of all types. If the solutions were at a high  temperature, the result would have twice the thermal energy content. Quantities that <em>scale</em> in direct proportion to the size of sytem are <em>extensive</em> quantities.</p>
-<p>Other quantities, such as the temperature of the mixture, concentration of acid in the mixture, or vapor pressure are independent of the size of a system. Quantities that do not scale with the size are <em>intensive</em> quantities.</p>
-<p>This distinction is fundamental to process modeling and thermodynamics.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<blockquote><p><strong>Exercise.</strong> Catagorize the following quantities as either extensive or intensive variables: Concentration, density, electrical charge, electrical resistivity, length, material hardness, mass, moles, pH, pressure, specific volume, temperature, viscosity, volume.</p>
-</blockquote>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.1.5-Ideal-Gas-Law-Calculations">1.1.5 Ideal Gas Law Calculations<a class="anchor-link" href="#1.1.5-Ideal-Gas-Law-Calculations">&#182;</a></h2><p>The ideal gas law is a work horse of engineering calculations.</p>
-\begin{equation}
-PV = nRT
-\end{equation}<p>Despite its simplicity and familiarity, misuse of units and scale for pressure $P$ and temperature $T$, and identifying correct values of the gas constant $R$, are common sources of errors in homework and exams. Taking time now to really master ideal gas law calculations will pay dividends down the road.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.5.1-Absolute-Temperature">1.1.5.1 Absolute Temperature<a class="anchor-link" href="#1.1.5.1-Absolute-Temperature">&#182;</a></h3><table>
-<thead><tr>
-<th style="text-align:left">Reference</th>
-<th style="text-align:center">F</th>
-<th style="text-align:center">C</th>
-<th style="text-align:center">R</th>
-<th style="text-align:center">K</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">Absolute Zero</td>
-<td style="text-align:center">-459.67</td>
-<td style="text-align:center">-273.15</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">0</td>
-</tr>
-<tr>
-<td style="text-align:left">Normal Boiling point of $N_2$</td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">Dry Ice</td>
-<td style="text-align:center">-109.3</td>
-<td style="text-align:center">-78.5</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">Boiling Point of Propane</td>
-<td style="text-align:center">-43.6</td>
-<td style="text-align:center">-42</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">Freezing Point of Water</td>
-<td style="text-align:center">32</td>
-<td style="text-align:center">0</td>
-<td style="text-align:center">491.67</td>
-<td style="text-align:center">273.15</td>
-</tr>
-<tr>
-<td style="text-align:left">STP</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">Typical Room Temperature</td>
-<td style="text-align:center">68</td>
-<td style="text-align:center">20</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">Pleasant Summer Day</td>
-<td style="text-align:center">77</td>
-<td style="text-align:center">25</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">Human Body</td>
-<td style="text-align:center"></td>
-<td style="text-align:center">37</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">Normal Boiling Point of Water</td>
-<td style="text-align:center">212</td>
-<td style="text-align:center">100</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">10 psig steam</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">70 psig steam</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-<tr>
-<td style="text-align:left">400 psig steam</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.5.2-Absolute-versus-Gauge-Pressure">1.1.5.2 Absolute versus Gauge Pressure<a class="anchor-link" href="#1.1.5.2-Absolute-versus-Gauge-Pressure">&#182;</a></h3><p>Every engineer needs to know atmospheric pressure in common engineering and scientific units. If need to look up these numbers then you're doing it wrong.</p>
-<table>
-<thead><tr>
-<th style="text-align:center">Value</th>
-<th style="text-align:center">Unit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">1</td>
-<td style="text-align:center">atm</td>
-</tr>
-<tr>
-<td style="text-align:center">14.696</td>
-<td style="text-align:center">pounds per square inch (absolute), psia</td>
-</tr>
-<tr>
-<td style="text-align:center">0</td>
-<td style="text-align:center">pounds per square inch (gauge), psig</td>
-</tr>
-<tr>
-<td style="text-align:center">101,325</td>
-<td style="text-align:center">Newtons per square meter (Pascals)</td>
-</tr>
-<tr>
-<td style="text-align:center">101.325</td>
-<td style="text-align:center">kiloPascals</td>
-</tr>
-<tr>
-<td style="text-align:center">1.01325</td>
-<td style="text-align:center">bars</td>
-</tr>
-<tr>
-<td style="text-align:center">1013.25</td>
-<td style="text-align:center">millibars</td>
-</tr>
-<tr>
-<td style="text-align:center">760</td>
-<td style="text-align:center">mm Hg</td>
-</tr>
-<tr>
-<td style="text-align:center">760</td>
-<td style="text-align:center">torr</td>
-</tr>
-<tr>
-<td style="text-align:center">29.92</td>
-<td style="text-align:center">in Hg</td>
-</tr>
-<tr>
-<td style="text-align:center">33.9</td>
-<td style="text-align:center">feet of water</td>
-</tr>
-</tbody>
-</table>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.5.3-Units-of-Pressure-(to-be-completed)">1.1.5.3 Units of Pressure (to be completed)<a class="anchor-link" href="#1.1.5.3-Units-of-Pressure-(to-be-completed)">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.5.4-PV-has-units-of-Energy-(to-be-completed)">1.1.5.4 PV has units of Energy (to be completed)<a class="anchor-link" href="#1.1.5.4-PV-has-units-of-Energy-(to-be-completed)">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.5.5-Table-of-Values-for-$R$-(to-be-completed)">1.1.5.5 Table of Values for $R$ (to be completed)<a class="anchor-link" href="#1.1.5.5-Table-of-Values-for-$R$-(to-be-completed)">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.1.6-Working-with-Units-in-Python-using-the-pint-library">1.1.6 Working with Units in Python using the pint library<a class="anchor-link" href="#1.1.6-Working-with-Units-in-Python-using-the-pint-library">&#182;</a></h2><p>There are a number of python libraries that incorporate units into python calculations. Among these, <a href="http://pint.readthedocs.org/en/latest/">pint</a> is a relatively new library that builds on experience with earlier attempts.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>pip install pint
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Requirement already satisfied: pint in /Users/jeff/anaconda/lib/python3.5/site-packages
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The core concept in pint is to work with a <code>unit registry</code>, which is created as follows</p>
+<h1 id="2.4-Queary-Wolfram-Alpha-for-Information">2.4 Queary Wolfram Alpha for Information<a class="anchor-link" href="#2.4-Queary-Wolfram-Alpha-for-Information">&#182;</a></h1><p><a href="https://www.wolframalpha.com/">Wolfram Alpha</a> is a very useful tool for obtaining information and solving problems. This examples shows how to directly interface with Wolfram Alpha.</p>
+<p>First, I will gather <code>pint</code> and <code>CoolProp</code> and setup <code>numPy</code> for use.</p>
 
 </div>
 </div>
@@ -15260,11 +14632,26 @@ PV = nRT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pint</span> <span class="kn">import</span> <span class="n">UnitRegistry</span>
-<span class="n">ur</span> <span class="o">=</span> <span class="n">UnitRegistry</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">pint</span> <span class="kn">import</span> <span class="n">UnitRegistry</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">!</span>pip install pint
+    <span class="kn">from</span> <span class="nn">pint</span> <span class="kn">import</span> <span class="n">UnitRegistry</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">ur</span> <span class="o">=</span> <span class="n">UnitRegistry</span><span class="p">()</span>
+    
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span> <span class="nn">CoolProp.CoolProp</span> <span class="kn">import</span> <span class="n">PhaseSI</span><span class="p">,</span> <span class="n">PropsSI</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">!</span>pip install CoolProp
+    <span class="kn">from</span> <span class="nn">CoolProp.CoolProp</span> <span class="kn">import</span> <span class="n">PhaseSI</span><span class="p">,</span> <span class="n">PropsSI</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">CoolProp</span> <span class="k">as</span> <span class="nn">CP</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 
      </div>
@@ -15283,7 +14670,7 @@ PV = nRT
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.6.1-Assigning-Multiplicative-Units">1.1.6.1 Assigning Multiplicative Units<a class="anchor-link" href="#1.1.6.1-Assigning-Multiplicative-Units">&#182;</a></h3><p>The unit registry provides a simple means to assign units using the multiplication operator. For example, here's how to compute the molarity of a sodium chloride solution in 58.44 grams of $NaCl$ (mw = 58.44) has been dissolved in water to form 3 liters of solution.</p>
+<h2 id="2.4.1-Situation">2.4.1 Situation<a class="anchor-link" href="#2.4.1-Situation">&#182;</a></h2><p>I need the properties of Chlorine at 1.55 atm and 200 deg. C.</p>
 
 </div>
 </div>
@@ -15297,18 +14684,101 @@ PV = nRT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># problem data</span>
-<span class="n">V</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">liters</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">58.44</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span>
-<span class="n">mw</span> <span class="o">=</span> <span class="mf">58.44</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">CP</span><span class="o">.</span><span class="n">CoolProp</span><span class="o">.</span><span class="n">get_fluid_param_string</span><span class="p">(</span><span class="s2">&quot;Chlorine&quot;</span><span class="p">,</span><span class="s2">&quot;JSON&quot;</span><span class="p">)</span>
+</pre></div>
 
-<span class="c1"># compute molarity</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">m</span><span class="o">/</span><span class="p">(</span><span class="n">mw</span><span class="o">*</span><span class="n">V</span><span class="p">)</span>
+     </div>
+</div>
+</div>
+</div>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
+<pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">RuntimeError</span>                              Traceback (most recent call last)
+Input <span class="ansi-green-fg">In [9]</span>, in <span class="ansi-cyan-fg">&lt;cell line: 1&gt;</span><span class="ansi-blue-fg">()</span>
+<span class="ansi-green-fg">----&gt; 1</span> <span class="ansi-yellow-bg">CP</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">CoolProp</span><span class="ansi-yellow-bg" style="color: rgb(98,98,98)">.</span><span class="ansi-yellow-bg">get_fluid_param_string</span><span class="ansi-yellow-bg">(</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">Chlorine</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">,</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">JSON</span><span class="ansi-yellow-bg" style="color: rgb(175,0,0)">&#34;</span><span class="ansi-yellow-bg">)</span>
+
+File <span class="ansi-green-fg">CoolProp/CoolProp.pyx:315</span>, in <span class="ansi-cyan-fg">CoolProp.CoolProp.get_fluid_param_string</span><span class="ansi-blue-fg">()</span>
+
+File <span class="ansi-green-fg">CoolProp/CoolProp.pyx:316</span>, in <span class="ansi-cyan-fg">CoolProp.CoolProp.get_fluid_param_string</span><span class="ansi-blue-fg">()</span>
+
+<span class="ansi-red-fg">RuntimeError</span>: key [Chlorine] was not found in string_to_index_map in JSONFluidLibrary</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+    
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Oh no ... CoolProp doesn't have chlorine ... so, I asked chatGPT for a python script to use WolframAlpha to query fluid properties ...</p>
+<p>First, to use the Wolfram Alpha API and make queries in your Python code, you need to have an App ID. Here's how to get one:</p>
+<ul>
+<li>Go to the Wolfram Alpha developer portal.</li>
+<li>Sign in or create an account if you don't have one already.</li>
+<li>Click on the "Get an AppID" button.</li>
+<li>Fill out the form with your app's details, such as the name and description.</li>
+<li>Click on the "Create AppID" button.</li>
+<li>Your new App ID will be displayed on the page.</li>
+<li>Copy your App ID and use it in your Python code to make queries to the Wolfram Alpha API.</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span> <span class="nn">wolframalpha</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="o">!</span>pip install wolframalpha
+    <span class="kn">import</span> <span class="nn">wolframalpha</span>
+
+<span class="n">app_id</span> <span class="o">=</span> <span class="s2">&quot;32XYTH-8WAQ64Y9KH&quot;</span> <span class="c1"># this is my app_id ... yours would be different</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">wolframalpha</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">app_id</span><span class="p">)</span>
+
+<span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;density of chlorine at 200 degC and 1.55 atm&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+<span class="n">answer</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">results</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>  <span class="c1"># output: &quot;997.047 kg/m^3 (kilograms per cubic meter)&quot;</span>
 </pre></div>
 
      </div>
@@ -15330,7 +14800,7 @@ PV = nRT
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.3333333333333333 mole / liter
+<pre>2.845 kg/m^3 (kilograms per cubic meter)
 </pre>
 </div>
 </div>
@@ -15350,7 +14820,7 @@ PV = nRT
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.6.2-Unit-Conversion">1.1.6.2 Unit Conversion<a class="anchor-link" href="#1.1.6.2-Unit-Conversion">&#182;</a></h3><p>Each variable with units has <code>to()</code> and <code>ito()</code> methods for converting the quantity to a desired set of units. The <code>to()</code> method is used to create a new variable by converting an existing variable to the indicated units.</p>
+<p>Sometimes it still won't work. So, we have to always ben willing to find other sources ...</p>
 
 </div>
 </div>
@@ -15364,14 +14834,14 @@ PV = nRT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">kilograms</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">gallon</span>
-<span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;viscosity of chlorine at 200 degC and 1.55 atm&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">results</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>  <span class="c1"># output: &quot;997.047 kg/m^3 (kilograms per cubic meter)&quot;</span>
 </pre></div>
 
      </div>
@@ -15393,8 +14863,7 @@ PV = nRT
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.5 kilogram / gallon
-132.08602617907425 gram / liter
+<pre>(data not available)
 </pre>
 </div>
 </div>
@@ -15414,7 +14883,8 @@ PV = nRT
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The <code>ito()</code> method converts an existing variable 'in-place'.</p>
+<p>That still didn't work, so I just went to <a href="https://www.engineeringtoolbox.com/gases-absolute-dynamic-viscosity-d_1888.html">Engineer's Toolbox</a> and looked it up. You may need a CRC handbook or some other reference at times.</p>
+<p>$ \mu = 2.10e^{-5} $ Pa$\cdot$s</p>
 
 </div>
 </div>
@@ -15428,13 +14898,14 @@ PV = nRT
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">kilograms</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">gallon</span>
-<span class="n">x</span><span class="o">.</span><span class="n">ito</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;speed of sound for chlorine at 200 degC and 1.55 atm&quot;</span>
+<span class="n">res</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">answer</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">results</span><span class="p">)</span><span class="o">.</span><span class="n">text</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span>  
 </pre></div>
 
      </div>
@@ -15456,713 +14927,13 @@ PV = nRT
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>132.08602617907425 gram / liter
+<pre>964.6 km/h (kilometers per hour)
 </pre>
 </div>
 </div>
 
 </div>
 
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For example, here's how to compute the molarity of a sodium chloride solution in which 0.5 pounds of NaCl (mw = 58.44) has been dissolved in water to form 2 gallons of solution.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># problem data</span>
-<span class="n">V</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">gallons</span>
-<span class="n">m</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">lbs</span>
-<span class="n">mw</span> <span class="o">=</span> <span class="mf">58.44</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
-
-<span class="c1"># compute concentration</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">m</span><span class="o">/</span><span class="p">(</span><span class="n">mw</span><span class="o">*</span><span class="n">V</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-
-<span class="c1"># convert to desired units and print</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-
-<span class="c1"># convert to moles per gallon</span>
-<span class="n">C</span><span class="o">.</span><span class="n">ito</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">gallon</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.0028519279032626055 mole * pound / gallon / gram
-0.3417363316133261 mole / liter
-1.2936127367100163 mole / gallon
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Muratic Acid is concentrated hydrochloric acid (31.5% by weight) sold by the gallon in home improvement centers for cleaning brick and masonary surfaces. The density of the solution is typically about 1.15 grams/ml. What is the molar concentration of HCl?</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># molecular weight</span>
-<span class="n">mwHCl</span> <span class="o">=</span> <span class="mf">36.46</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
-
-<span class="c1"># problem data</span>
-<span class="n">rho</span> <span class="o">=</span> <span class="mf">1.15</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">ml</span>
-<span class="n">wHCl</span> <span class="o">=</span> <span class="mf">0.315</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">gram</span>
-
-<span class="c1"># calculations</span>
-<span class="n">massHCl</span> <span class="o">=</span> <span class="n">wHCl</span> <span class="o">*</span> <span class="n">rho</span>             <span class="c1"># mass of HCl per volume</span>
-<span class="n">moleHCl</span> <span class="o">=</span> <span class="n">massHCl</span><span class="o">/</span><span class="n">mwHCl</span>          <span class="c1"># gmols of HCl per volume</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">moleHCl</span><span class="p">)</span>
-
-<span class="c1"># convert to desired units</span>
-<span class="n">moleHCl</span><span class="o">.</span><span class="n">ito</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">moleHCl</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.009935545803620405 mole / milliliter
-9.935545803620405 mole / liter
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.6.3-Mole-and-Mass-Fractions">1.1.6.3 Mole and Mass Fractions<a class="anchor-link" href="#1.1.6.3-Mole-and-Mass-Fractions">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># molar weights </span>
-<span class="n">mwBen</span> <span class="o">=</span> <span class="mf">78.11</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span>
-<span class="n">mwTol</span> <span class="o">=</span> <span class="mf">92.14</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">liter</span>
-
-<span class="n">xBen</span> <span class="o">=</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
-<span class="n">xTol</span> <span class="o">=</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
-
-<span class="n">wBen</span> <span class="o">=</span> <span class="n">mwBen</span><span class="o">*</span><span class="n">xBen</span> <span class="o">/</span> <span class="p">(</span><span class="n">mwBen</span><span class="o">*</span><span class="n">xBen</span> <span class="o">+</span> <span class="n">mwTol</span><span class="o">*</span><span class="n">xTol</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">wBen</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>0.36108542899408286 dimensionless
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.6.4-Prefixes">1.1.6.4 Prefixes<a class="anchor-link" href="#1.1.6.4-Prefixes">&#182;</a></h3>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">mwBen</span> <span class="o">=</span> <span class="mf">78.11</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">kg</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">kmol</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mwBen</span><span class="p">)</span>
-
-<span class="n">mwBen</span><span class="o">.</span><span class="n">ito_base_units</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">mwBen</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>78.11 kilogram / kilomole
-0.07811 kilogram / mole
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.6.5-Temperature-and-Other-Offset-(Non-multiplicative)-Units">1.1.6.5 Temperature and Other Offset (Non-multiplicative) Units<a class="anchor-link" href="#1.1.6.5-Temperature-and-Other-Offset-(Non-multiplicative)-Units">&#182;</a></h3><p>Examples of non-multiplicative units are degrees Celsius, degrees Fahrenheit, and gauge pressure. For these units the zero of the measurement scale is offset from absolute zero of the underlying physical quantity. In these cases the units are assigned using the <code>Quantity()</code> function of the <code>UnitRegistry</code> module.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="n">ur</span><span class="o">.</span><span class="n">degC</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">,</span> <span class="s2">&quot; = &quot;</span><span class="p">,</span> <span class="n">T</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>25 degC  =  77.00000039999996 degF
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>There is an embedded ambiguity in working with non-multiplicative units. For example, given temperatures Ta = 10 and Tdelta = 25 in degrees C, should Ta + Tdelta give an answer of 35 degrees C, or the sum of the absolute temperatures which would correspond to 308.15 degrees C?</p>
-<p>Pint uses unit type called <code>delta_degC</code> for this situation.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Ta</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degC</span><span class="p">)</span>
-<span class="n">Tdelta</span> <span class="o">=</span> <span class="mf">25.0</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">delta_degC</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">Ta</span> <span class="o">+</span> <span class="n">Tdelta</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>35.0 degC
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Tb</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mf">100.0</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degC</span><span class="p">)</span>
-<span class="n">Tf</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mf">32.0</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:6.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">Tb</span><span class="o">-</span><span class="n">Tf</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="si">{0:6.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">Tb</span><span class="o">-</span><span class="n">Tf</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">delta_degF</span><span class="p">)))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>100.000 delta_degC
-180.000 delta_degF
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">P1</span> <span class="o">=</span> <span class="p">(</span><span class="mf">12.5</span> <span class="o">+</span> <span class="mf">14.696</span><span class="p">)</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">psi</span>
-
-<span class="n">T1</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degR</span><span class="p">)</span>
-<span class="n">T2</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degR</span><span class="p">)</span>
-
-<span class="n">P2</span> <span class="o">=</span> <span class="p">(</span><span class="n">T2</span><span class="o">/</span><span class="n">T1</span><span class="p">)</span><span class="o">*</span><span class="n">P1</span> <span class="o">-</span> <span class="mf">14.696</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">psi</span>
-<span class="n">P2</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-10.959644683262889 pound_force_per_square_inch
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="n">pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
-
-<span class="c1"># constants</span>
-<span class="n">R</span> <span class="o">=</span> <span class="mf">8.314</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">joule</span><span class="o">/</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span><span class="o">*</span><span class="n">ur</span><span class="o">.</span><span class="n">degK</span><span class="p">)</span>
-<span class="n">mw</span> <span class="o">=</span> <span class="mf">28.966</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">mol</span>
-
-<span class="c1"># problem data</span>
-<span class="n">P</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">atm</span>
-<span class="n">T</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">25</span><span class="p">,</span><span class="n">ur</span><span class="o">.</span><span class="n">degC</span><span class="p">)</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degK</span><span class="p">)</span>
-<span class="n">r</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">cm</span>
-
-<span class="c1"># calculations</span>
-<span class="n">V</span> <span class="o">=</span> <span class="p">(</span><span class="mf">4.0</span><span class="o">/</span><span class="mf">3.0</span><span class="p">)</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="o">**</span><span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Volume = &quot;</span><span class="p">,</span> <span class="n">V</span><span class="p">)</span>
-
-<span class="n">m</span> <span class="o">=</span> <span class="n">mw</span><span class="o">*</span><span class="n">P</span><span class="o">*</span><span class="n">V</span><span class="o">/</span><span class="p">(</span><span class="n">R</span><span class="o">*</span><span class="n">T</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mass of Air = &quot;</span><span class="p">,</span> <span class="n">m</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">grams</span><span class="p">))</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>Volume =  4188.790204786391 centimeter ** 3
-Mass of Air =  4.95962584191983 gram
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="1.1.7-Exercises">1.1.7 Exercises<a class="anchor-link" href="#1.1.7-Exercises">&#182;</a></h2>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.7.1-Units-of-Refrigeration">1.1.7.1 Units of Refrigeration<a class="anchor-link" href="#1.1.7.1-Units-of-Refrigeration">&#182;</a></h3><p>A hockey arena is equipped with a cooling system providing 200 tons of refrigeration. (Refrigeration capacity is measured in units of 'tons' that correspond to the rate of energy removal necessary to freeze one ton of ice in 24 hour. It is commonly assumed to be 12,000 British Thermal Units (BTU) per hour). It is proposed to add seating for 1,500 spectators.  Assuming each spectator releases about 100 watts of power, how many additional tons of refrigeration will be required to maintain ice conditions?</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.7.2-Units-of-the-Ideal-Gas-Law">1.1.7.2 Units of the Ideal Gas Law<a class="anchor-link" href="#1.1.7.2-Units-of-the-Ideal-Gas-Law">&#182;</a></h3><p>The ideal gas equation may be written as</p>
-$$ PV = nRT$$<p>where $P$ is pressure, $V$ is volume, $n$ is the number of moles, and $T$ is temperature. Show that the units of $PV$ can be expressed as energy.</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.7.3-Deflategate">1.1.7.3 Deflategate<a class="anchor-link" href="#1.1.7.3-Deflategate">&#182;</a></h3><p>NFL rules specify that footballs should inflated to between 12.5 and 13.5 pounds per square inch. In the so-called "Deflategate" controversy involving the AFC championship game of 2015, the New England Patriots were accused of underinflating the game balls in order to achieve an advantage. Independent estimates show the game balls were inflated to 11.5 pounds per square inch at the game day temperature of 51 degrees F. Suppose the balls were originally filled in a training room at 72 degrees F. Assuming the ideal gas law applies, did the balls meet NFL rules at the time they were filled?</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.7.4-Agricultural-Chemical-Calculations">1.1.7.4 Agricultural Chemical Calculations<a class="anchor-link" href="#1.1.7.4-Agricultural-Chemical-Calculations">&#182;</a></h3><p>A farmer plans to plant 1 square mile of farmland as corn and needs to calculate how much nitrogen fertilizer to buy. Lab samples show the upper 6 inches of soil average 8 parts per million (ppm) of nitrogen by weight, and 4 ppm in the next 18 inches. The dry weight of the soil is 4 million pounds per acre-foot. The farmer is planning for a yield of 180 bushels/acre, and the local university agricultural department recommends a total of 1.2 pounds of nitrogen per bushel for the local soil conditions.</p>
-<p>Nitrogen is available to the farm in the form of urea (chemical formula $CH_4N_2O$) at a price of \$592 per short ton, and as anhydrous ammonia (chemical formula $NH_3$) at a price of \$847 per short ton.</p>
-<p>What type of fertilizer should the farmer buy, how much, and at what cost?</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.7.5-Units-of-Illumination">1.1.7.5 Units of Illumination<a class="anchor-link" href="#1.1.7.5-Units-of-Illumination">&#182;</a></h3><p>A regional entreprenuer is proposing to develop an indoor hydroponics facility enclosing 1 acre of useable growing area. The proposal includes illuminating the growing area at 20,000 lux using led lamps capable of producing 80 lumens/watt and operating 18 hours/day.  Local electricity prices are 8.5 cents per kilowatt-hour. What will be the annual cost of electricity for illumination?</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="1.1.7.6-Estimation">1.1.7.6 Estimation<a class="anchor-link" href="#1.1.7.6-Estimation">&#182;</a></h3><p>Atmospheric pressure averages about 14.696 pounds per square inch which is equal to the weight of the corresponding air column at sea level.  The current level of carbon dioxide ($CO_2$) in the atmosphere is about 400 ppm (by mass), and rising at a level of 2.1 ppm per year. How much $CO_2$ would have to be sequestered each year to maintain carbon dioxide at current atmospheric levels?  Express your answer in giga-metric-tons, and giga-metric-ton-moles.</p>
-<p>If the density of air-dried wood is 0.53 grams/cm^3, is 20% water by weight, and the dry mass is 45% carbon, how many acre-feet of wood would be required to sequester the excess $CO_2$? Does that seem plausible?</p>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
 </div>
 
 </div>
@@ -16177,7 +14948,7 @@ $$ PV = nRT$$<p>where $P$ is pressure, $V$ is volume, $n$ is the number of moles
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><!--NAVIGATION-->
-&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/01.00-Units-Quantities-and-Engineering-Calculations.html">1.0 Units, Quantities, and Engineering Calculations</a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/01.02-Units-Template-with-pint.html">1.2 Units Template with <code>pint</code></a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/01.01-Units-and-Engineering-Calculations.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/01.01-Units-and-Engineering-Calculations.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
+&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/02.03-Properties-of-Pure-Substances-with-CoolProp.html">2.3 Properties of Pure Substances with <code>CoolProp</code></a> | <a href="toc.html">Contents</a> |<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/02.04-Queary-Wolfram-Alpha.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a><p><a href="https://docNathanM.github.io/chemeng316_fluids/02.04-Queary-Wolfram-Alpha.ipynb"> <img align="left" src="https://img.shields.io/badge/Github-Download-blue.svg" alt="Download" title="Download Notebook"></a></p>
 
 </div>
 </div>
