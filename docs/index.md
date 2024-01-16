@@ -3,6 +3,7 @@
 # chemeng316_fluids
 
 ### [Table of Contents](https://docNathanM.github.io/chemeng316_fluids/toc.html)
+### [Figure Index](https://docNathanM.github.io/chemeng316_fluids/figure_index.html)
 ### [Python Module Index](https://docNathanM.github.io/chemeng316_fluids/python_index.html)
 
 ### [0.0 Getting Started](https://docNathanM.github.io/chemeng316_fluids/00.00-Getting-Started.html)
