@@ -11,11 +11,15 @@ were developed and tested using the [Anaconda](https://www.anaconda.com/download
 ### [Table of Contents](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/toc.ipynb?flush=true)
 
 ### [Getting Started](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/00.00-Getting-Started.ipynb)
-- [0.1 Jupyter Notebooks, Python, and Google Colaboratory](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/00.01-Getting-Started-with-Jupyter-Notebooks-and-Python.ipynb)
-- [0.2 Solving Linear Equations with Simpy](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/00.02-Solving-Linear-Equations-with-Sympy.ipynb)
+- [0.1 What Chemical Engineers Do](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/00.01-What-Chemical-Engineers-Do.ipynb)
+- [0.2 Jupyter Notebooks, Python, and Google Colaboratory](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/00.02-Getting-Started-with-Jupyter-Notebooks-and-Python.ipynb)
+- [0.3 Solving Linear Equations with Simpy](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/00.03-Solving-Linear-Equations-with-Sympy.ipynb)
 
 ### [Chapter 1.0 Units, Quantities, and Engineering Calculations](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/01.00-Units-Quantities-and-Engineering-Calculations.ipynb)
 - [1.1 Units and Engineering Calculations](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/01.01-Units-and-Engineering-Calculations.ipynb)
+- [1.2 Units Template with `pint`](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/01.02-Units-Template-with-pint.ipynb)
+- [1.3 Properties of Pure Substances with `CoolProp`](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/01.03-Properties-of-Pure-Substances-with-CoolProp.ipynb)
+- [1.4 Queary Wolfram Alpha for Information](http://nbviewer.jupyter.org/github/docNathanM/chemeng316_fluids/blob/master/notebooks/01.04-Queary-Wolfram-Alpha.ipynb)
 
 
 **Note on the use of Python.** The Python used in these notebooks is deliberately limited to a core set of language
