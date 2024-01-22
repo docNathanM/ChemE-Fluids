@@ -9,6 +9,7 @@ directly in Google Colaboratory where they can be run, edited, shared, and saved
 were developed and tested using the [Anaconda](https://www.anaconda.com/download/) distribution.
 
 ### [Table of Contents](https://docNathanM.github.io/chemeng316_fluids/toc.html)
+### [Figure Index](https://docNathanM.github.io/chemeng316_fluids/figure_index.html)
 ### [Python Module Index](https://docNathanM.github.io/chemeng316_fluids/python_index.html)
 
 ### [Chapter 1.0 Getting Started](https://docNathanM.github.io/chemeng316_fluids/01.00-Getting-Started.html)
@@ -21,6 +22,13 @@ were developed and tested using the [Anaconda](https://www.anaconda.com/download
 - [2.2 Units Template with `pint`](https://docNathanM.github.io/chemeng316_fluids/02.02-Units-Template-with-pint.html)
 - [2.3 Properties of Pure Substances with `CoolProp`](https://docNathanM.github.io/chemeng316_fluids/02.03-Properties-of-Pure-Substances-with-CoolProp.html)
 - [2.4 Queary Wolfram Alpha for Information](https://docNathanM.github.io/chemeng316_fluids/02.04-Queary-Wolfram-Alpha.html)
+
+### [Chapter 3.0 Drawings and Diagrams](https://docNathanM.github.io/chemeng316_fluids/03.00-Drawings-and-Diagrams.html)
+- [3.1 Tools for 2-D Diagrams](https://docNathanM.github.io/chemeng316_fluids/03.01-Tools-for-2D-Diagrams.html)
+- [3.2 Drawings and Diagrams](https://docNathanM.github.io/chemeng316_fluids/03.02-Tools-for-3D-Design.html)
+
+### [Appendix A. A.0 Simulating Fluid Mechanics](https://docNathanM.github.io/chemeng316_fluids/A.00-Simulating-Fluid-Mechanics.html)
+- [A.1 Fluid Simulation with $\phi_\textrm{Flow}$](https://docNathanM.github.io/chemeng316_fluids/A.01-Fluid-Simulation-with-PhiFlow.html)
 
 
 **Note on the use of Python.** The Python used in these notebooks is deliberately limited to a core set of language
