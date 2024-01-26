@@ -28,7 +28,7 @@ were developed and tested using the [Anaconda](https://www.anaconda.com/download
 - [3.2 Tools for 3D Design and Illustration](https://docNathanM.github.io/chemeng316_fluids/03.02-Tools-for-3D-Design.html)
 
 ### [Appendix A. A.0 Simulating Fluid Mechanics](https://docNathanM.github.io/chemeng316_fluids/A.00-Simulating-Fluid-Mechanics.html)
-- [A.1 Fluid Simulation with $\phi_\textrm{Flow}$](https://docNathanM.github.io/chemeng316_fluids/A.01-Fluid-Simulation-with-PhiFlow.html)
+- [A.1 Fluid Simulation with $\phi_{Flow}$](https://docNathanM.github.io/chemeng316_fluids/A.01-Fluid-Simulation-with-PhiFlow.html)
 
 ### [Appendix B. B.0 Homework Assignments](https://docNathanM.github.io/chemeng316_fluids/B.00-Homework-Assignments.html)
 - [B.1 Homework 1](https://docNathanM.github.io/chemeng316_fluids/B.01-Homework-01.html)
