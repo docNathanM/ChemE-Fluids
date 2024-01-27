@@ -14635,10 +14635,11 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><strong>Problem 1</strong>. In the production of fishmeal, the oil is first extracted, leaving a wet fish cake containing 88 wt.% water. This cake is partially dried to reduce the moisture content to 27 wt.%, after which the cake is ground.</p>
-
-<pre><code>- Construct a block flow diagram of this process.
-- How many kg/h of wet cake would be necessary to produce 1200 kg/h of "dry" cake?
-- How much water is extracted from the wet cake (in kg/h)?</code></pre>
+<ul>
+<li>Construct a block flow diagram of this process.</li>
+<li>How many kg/h of wet cake would be necessary to produce 1200 kg/h of "dry" cake?</li>
+<li>How much water is extracted from the wet cake (in kg/h)?</li>
+</ul>
 
 </div>
 </div>
@@ -14685,7 +14686,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -14711,7 +14712,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -14719,6 +14720,28 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <span class="k">except</span><span class="p">:</span>
     <span class="o">!</span>pip install CoolProp
     <span class="kn">import</span> <span class="nn">CoolProp.CoolProp</span> <span class="k">as</span> <span class="nn">CP</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># we need numpy for constants like pi</span>
+<span class="c1"># https://numpy.org/doc/stable/reference/constants.html</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 
      </div>
@@ -14757,7 +14780,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Problem 2</strong>. Air is flowing steadily through a horizontal heated tube. The air enters at 45 $^\circ$F at a velocity of 55 ft/s. The air leaves the tube at 145 $^\circ$F and 66 ft/s.</p>
+<p><strong>Problem 2</strong>. Air is flowing steadily through a horizontal heated tube. The air enters at 45 $^\circ$F at a velocity of 55 ft/s. The air leaves the tube at 145 $^\circ$F and 66 ft/s. <em>HINT: See Supplement 2.3 for CoolProp properties examples</em>.</p>
 <ul>
 <li>What is the mass flowrate (in lb/s) of the air within the heated tube if the tube diameter is 3 inch? </li>
 <li>If the average specific heat of air is 0.24 BTU/lb $\cdot^\circ$F, how many BTU/lb of energy is transferred through the wall of the tube? </li>
@@ -14771,12 +14794,85 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 
 
 
+    <div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[72]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># In order to get tempeature and fluid properties you do something like this ...</span>
+
+<span class="c1"># GIVEN information ...</span>
+<span class="n">T1_degF</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">45</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">);</span>
+<span class="n">u1</span> <span class="o">=</span> <span class="mi">55</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">feet</span> <span class="o">/</span> <span class="n">ur</span><span class="o">.</span><span class="n">sec</span><span class="p">;</span>
+<span class="n">cp_air</span> <span class="o">=</span> <span class="mf">0.24</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">BTU</span><span class="o">/</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">lb</span><span class="o">*</span><span class="n">ur</span><span class="o">.</span><span class="n">degR</span><span class="p">);</span>
+
+<span class="n">T2_degF</span> <span class="o">=</span> <span class="n">ur</span><span class="o">.</span><span class="n">Quantity</span><span class="p">(</span><span class="mi">145</span><span class="p">,</span> <span class="n">ur</span><span class="o">.</span><span class="n">degF</span><span class="p">);</span>
+<span class="n">u2</span> <span class="o">=</span> <span class="mi">66</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">feet</span> <span class="o">/</span> <span class="n">ur</span><span class="o">.</span><span class="n">sec</span><span class="p">;</span>
+
+<span class="n">d</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">inch</span><span class="p">;</span>
+
+<span class="c1"># ASSUMPTION: I&#39;m not told anything about the pressure ... so I have to assume something ...</span>
+<span class="n">P1</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">atm</span><span class="p">;</span>
+
+<span class="c1"># GET PROPERTIES</span>
+<span class="c1"># Note ... I&#39;m assuming a simple &quot;dry&quot;-air model for &quot;AIR&quot; ... if humidity needs to be taken</span>
+<span class="c1"># into account we would need to use HAPropsSI ... see</span>
+<span class="c1"># http://coolprop.org/fluid_properties/HumidAir.html#haprops-sample</span>
+<span class="n">T1_K</span> <span class="o">=</span> <span class="n">T1_degF</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degK</span><span class="p">);</span>
+<span class="n">rho1_kgPerM3</span> <span class="o">=</span> <span class="n">CP</span><span class="o">.</span><span class="n">PropsSI</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="s2">&quot;T&quot;</span><span class="p">,</span><span class="n">T1_K</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span><span class="s2">&quot;P&quot;</span><span class="p">,</span><span class="n">P1</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">Pa</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span><span class="s2">&quot;Air&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">kilogram</span> <span class="o">/</span> <span class="n">ur</span><span class="o">.</span><span class="n">meter</span> <span class="o">**</span><span class="mi">3</span><span class="p">;</span>
+
+<span class="n">T2_K</span> <span class="o">=</span> <span class="n">T2_degF</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">degK</span><span class="p">);</span>
+<span class="n">P2</span> <span class="o">=</span> <span class="n">P1</span><span class="p">;</span>
+<span class="n">rho2_kgPerM3</span> <span class="o">=</span> <span class="n">CP</span><span class="o">.</span><span class="n">PropsSI</span><span class="p">(</span><span class="s2">&quot;D&quot;</span><span class="p">,</span><span class="s2">&quot;T&quot;</span><span class="p">,</span><span class="n">T2_K</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span><span class="s2">&quot;P&quot;</span><span class="p">,</span><span class="n">P2</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">Pa</span><span class="p">)</span><span class="o">.</span><span class="n">magnitude</span><span class="p">,</span><span class="s2">&quot;Air&quot;</span><span class="p">)</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">kilogram</span> <span class="o">/</span> <span class="n">ur</span><span class="o">.</span><span class="n">meter</span> <span class="o">**</span><span class="mi">3</span><span class="p">;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;cp_air = </span><span class="si">{</span><span class="n">cp_air</span><span class="si">:</span><span class="s2">.4f~P</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">cp_air</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">ur</span><span class="o">.</span><span class="n">J</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">kg</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">K</span><span class="p">)</span><span class="si">:</span><span class="s2">.4f~P</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rho_1 = </span><span class="si">{</span><span class="n">rho1_kgPerM3</span><span class="si">:</span><span class="s2">.3f~P</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;rho_2 = </span><span class="si">{</span><span class="n">rho2_kgPerM3</span><span class="si">:</span><span class="s2">.3f~P</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>cp_air = 0.2400 Btu/lb/°R = 1004.8321 J/K/kg
+rho_1 = 1.260 kg/m³
+rho_2 = 1.051 kg/m³
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+
     <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR SOLUTION HERE</span>
@@ -14817,7 +14913,28 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[4]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Some GIVEN information ...</span>
+<span class="n">mDot1</span> <span class="o">=</span> <span class="mi">32000</span> <span class="o">*</span> <span class="n">ur</span><span class="o">.</span><span class="n">kg</span><span class="o">/</span><span class="n">ur</span><span class="o">.</span><span class="n">hr</span><span class="p">;</span> <span class="c1"># note that tonne is metric ton = 1000 kg</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+    <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR SOLUTION HERE</span>
