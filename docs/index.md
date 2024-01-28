@@ -27,11 +27,15 @@ were developed and tested using the [Anaconda](https://www.anaconda.com/download
 - [3.1 Tools for 2-D Diagrams](https://docNathanM.github.io/chemeng316_fluids/03.01-Tools-for-2D-Diagrams.html)
 - [3.2 Tools for 3D Design and Illustration](https://docNathanM.github.io/chemeng316_fluids/03.02-Tools-for-3D-Design.html)
 
+### [Chapter 4.0 Unit 1: Fluid Statics and Mechanics](https://docNathanM.github.io/chemeng316_fluids/04.00-Unit-1-Fluid-Statics-and-Mechanics.html)
+- [4.1 Applications in Fluid Statics](https://docNathanM.github.io/chemeng316_fluids/04.01-Applications-in-Fluid-Statics.html)
+
 ### [Appendix A. A.0 Simulating Fluid Mechanics](https://docNathanM.github.io/chemeng316_fluids/A.00-Simulating-Fluid-Mechanics.html)
 - [A.1 Fluid Simulation with $\phi_{Flow}$](https://docNathanM.github.io/chemeng316_fluids/A.01-Fluid-Simulation-with-PhiFlow.html)
 
 ### [Appendix B. B.0 Homework Assignments](https://docNathanM.github.io/chemeng316_fluids/B.00-Homework-Assignments.html)
 - [B.1 Homework 1](https://docNathanM.github.io/chemeng316_fluids/B.01-Homework-01.html)
+- [B.2 Homework 2](https://docNathanM.github.io/chemeng316_fluids/B.02-Homework-02.html)
 
 
 **Note on the use of Python.** The Python used in these notebooks is deliberately limited to a core set of language
