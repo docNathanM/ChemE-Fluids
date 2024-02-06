@@ -14601,7 +14601,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><!--NAVIGATION-->
-&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/B.03-Homework-03.html">B.3 Homework 3</a> | <a href="toc.html">Contents</a> |<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/B.04-Homework-04.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a></p>
+&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/B.03-Homework-03.html">B.3 Homework 3</a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/B.05-Homework-05.html">B.5 Homework 5</a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/B.04-Homework-04.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a></p>
 
 </div>
 </div>
@@ -14634,7 +14634,7 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Getting Started</strong>: Here is some code to at least get the UnitRegistry and CoolProp modules loaded for you to get started.</p>
+<p><strong>Getting Started</strong>: Here is the code to import the <code>pint</code>, <code>CoolProp</code>, <code>numpy</code>, <code>sympy</code>, and <code>matplotlib</code> modules to get you started.</p>
 
 </div>
 </div>
@@ -14712,9 +14712,9 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 
 <span class="c1"># For nice plotting I include ...</span>
-<span class="c1"># plt.rcParams[&#39;mathtext.default&#39;] = &#39;rm&#39;</span>
-<span class="c1"># plt.rcParams[&#39;mathtext.fontset&#39;] = &#39;stix&#39;</span>
-<span class="c1"># plt.rcParams[&#39;font.family&#39;] = &#39;Times New Roman&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;mathtext.default&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;rm&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;mathtext.fontset&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;stix&#39;</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="p">[</span><span class="s1">&#39;font.family&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Times New Roman&#39;</span>
 </pre></div>
 
      </div>
@@ -14784,79 +14784,8 @@ content is available <a href="https://github.com/docNathanM/chemeng316_fluids">o
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><strong>Problem 2</strong>. The entrance length for <em>laminar</em> flow indicates the pipe length, $x_t$, necessary to develop a full velocity profile is given as $x_t=0.05 D (Re)$. For turbulent flow, a rule of thumb is often applied such that the entrance length can be estimated as $x_t≈10D$. However, a more accurate description of the entrance length can be determined from the equation $x_t=1.36 D(Re)^{1/4}$. Assume the pipe diameter is 20 cm.</p>
-<ul>
-<li>If the accurate expression is considered, at what Reynolds number does the rule of thumb become a poor estimate assuming the rule fails to be effective when the estimation error exceeds 5%.</li>
-<li>Generate a graph of turbulent flow entrance length (in m) versus Reynolds number in the range 3000 to $3\times 10^7$.</li>
-<li>What additional adjustments can be made to the rule of thumb to increase its accuracy.</li>
-</ul>
-
-</div>
-</div>
-</div>
-</div>
-
-
-
-    <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR SOLUTION HERE</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<hr>
-</div>
-</div>
-</div>
-</div>
-
-
-
-    
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><!--NAVIGATION-->
-&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/B.03-Homework-03.html">B.3 Homework 3</a> | <a href="toc.html">Contents</a> |<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/B.04-Homework-04.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a></p>
+&lt; <a href="https://docNathanM.github.io/chemeng316_fluids/B.03-Homework-03.html">B.3 Homework 3</a> | <a href="toc.html">Contents</a> | <a href="https://docNathanM.github.io/chemeng316_fluids/B.05-Homework-05.html">B.5 Homework 5</a> &gt;<p><a href="https://colab.research.google.com/github/docNathanM/chemeng316_fluids/blob/master/docs/B.04-Homework-04.ipynb"> <img align="left" src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open in Colab" title="Open in Google Colaboratory"></a></p>
 
 </div>
 </div>
