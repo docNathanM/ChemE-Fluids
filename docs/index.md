@@ -39,6 +39,7 @@ were developed and tested using the [Anaconda](https://www.anaconda.com/download
 - [B.3 Homework 3](https://docNathanM.github.io/chemeng316_fluids/B.03-Homework-03.html)
 - [B.4 Homework 4](https://docNathanM.github.io/chemeng316_fluids/B.04-Homework-04.html)
 - [B.5 Homework 5](https://docNathanM.github.io/chemeng316_fluids/B.05-Homework-05.html)
+- [B.6 Homework 6](https://docNathanM.github.io/chemeng316_fluids/B.06-Homework-06.html)
 
 
 **Note on the use of Python.** The Python used in these notebooks is deliberately limited to a core set of language
